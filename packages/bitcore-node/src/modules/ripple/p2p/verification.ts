@@ -1,7 +1,7 @@
 import logger from '../../../logger';
 import { ErrorType, IVerificationPeer } from '../../../services/verification';
 import { XrpBlockStorage } from '../models/block';
-import { XrpP2pWorker } from '../p2p';
+import { XrpP2pWorker } from './index';
 import { IXrpCoin, IXrpTransaction } from '../types';
 
 export class XrpVerificationPeer extends XrpP2pWorker implements IVerificationPeer {

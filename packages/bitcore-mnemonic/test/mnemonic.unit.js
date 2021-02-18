@@ -3,7 +3,7 @@
 var chai = require('chai');
 var should = chai.should();
 
-var Mnemonic = require('..');
+var Mnemonic = require('../index');
 var errors = require('bitcore-lib').errors;
 var bip39_vectors = require('./data/fixtures.json');
 const unorm = require('unorm');

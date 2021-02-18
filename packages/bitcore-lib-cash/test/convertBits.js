@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect;
 var should = require('chai').should();
-var bitcore = require('..');
+var bitcore = require('../index');
 var convertBits = bitcore.util.convertBits;
 
 describe('convertBits', function() {

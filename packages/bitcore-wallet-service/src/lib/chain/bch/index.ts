@@ -1,6 +1,6 @@
 import { BitcoreLib, BitcoreLibCash } from 'crypto-wallet-core';
 import _ from 'lodash';
-import { IChain } from '..';
+import { IChain } from '../index';
 import { BtcChain } from '../btc';
 const config = require('../../../config');
 

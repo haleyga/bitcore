@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('chai').should();
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var Interpreter = bitcore.Script.Interpreter;
 var Transaction = bitcore.Transaction;
 var PrivateKey = bitcore.PrivateKey;
@@ -11,9 +11,9 @@ var BufferWriter = bitcore.encoding.BufferWriter;
 var Opcode = bitcore.Opcode;
 var _ = require('lodash');
 
-var script_tests = require('../data/bitcoind/script_tests');
-var tx_valid = require('../data/bitcoind/tx_valid');
-var tx_invalid = require('../data/bitcoind/tx_invalid');
+var script_tests = require('../data/bitcoind/script_tests.json');
+var tx_valid = require('../data/bitcoind/tx_valid.json');
+var tx_invalid = require('../data/bitcoind/tx_invalid.json');
 
 //the script string format used in bitcoind data tests
 Script.fromBitcoindString = function(str) {
@@ -229,7 +229,7 @@ describe('Interpreter', function() {
   };
 
   var testFixture = function(vector, expected, extraData) {
-  
+
     var scriptSig = Script.fromBitcoindString(vector[0]);
     var scriptPubkey = Script.fromBitcoindString(vector[1]);
     var flags = getFlags(vector[2]);
@@ -250,7 +250,7 @@ describe('Interpreter', function() {
     }));
     credtx.addOutput(new Transaction.Output({
       script: scriptPubkey,
-      satoshis: inputAmount, 
+      satoshis: inputAmount,
     }));
     var idbuf = credtx.id;
 

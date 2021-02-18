@@ -2,7 +2,7 @@
 
 var should = require('chai').should();
 var expect = require('chai').expect;
-var P2P = require('../../../');
+var P2P = require('../../../index');
 var Messages = P2P.Messages;
 var sinon = require('sinon');
 var bitcore = require('bitcore-lib');

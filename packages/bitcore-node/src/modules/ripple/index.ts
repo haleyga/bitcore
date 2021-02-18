@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { BaseModule } from '..';
+import { BaseModule } from '../index';
 import { RippleStateProvider } from './api/csp';
 import { RippleEventAdapter } from './api/event-adapter';
 import { XrpRoutes } from './api/xrp-routes';

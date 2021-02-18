@@ -1,4 +1,4 @@
-import { IValidation } from '..';
+import { IValidation } from '../index';
 const BitcoreCash = require('bitcore-lib-cash');
 
 export class BchValidation implements IValidation {

@@ -14,7 +14,7 @@ See [the main bitcore repo](https://github.com/bitpay/bitcore) for more informat
 npm install bitcore-p2p-cash
 ```
 
-In order to connect to the Bitcoin Cash network, you'll need to know the IP address of at least one node of the network, or use [Pool](./docs/pool.md) to discover peers using a DNS seed.
+In order to connect to the Bitcoin Cash network, you'll need to know the IP address of at least one node of the network, or use [Pool](docs/pool.md) to discover peers using a DNS seed.
 
 ```javascript
 var Peer = require('bitcore-p2p-cash').Peer;
@@ -43,7 +43,7 @@ peer.on('tx', function(message) {
 });
 ```
 
-Take a look at this [guide](./docs/peer.md) on the usage of the `Peer` class.
+Take a look at this [guide](docs/peer.md) on the usage of the `Peer` class.
 
 ## Contributing
 

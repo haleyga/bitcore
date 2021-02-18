@@ -7,7 +7,7 @@ import { ICoin } from '../../models/coin';
 import { ITransaction } from '../../models/transaction';
 import { IWallet } from '../../models/wallet';
 import { StreamingFindOptions } from '../../services/storage';
-import { ChainNetwork } from '../../types/ChainNetwork';
+import { ChainNetwork } from '../ChainNetwork';
 import { AuthheadJSON } from '../Authhead';
 import { CoinListingJSON } from '../Coin';
 import { DailyTransactionsJSON } from '../stats';

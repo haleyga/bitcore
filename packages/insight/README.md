@@ -4,7 +4,7 @@
 
 ## Quick Start
 
-To get started, first [start a `bitcore` node](../bitcore-node/readme.md), then run insight:
+To get started, first [start a `bitcore` node](../bitcore-node/README.md), then run insight:
 
 ```sh
 cd bitcore

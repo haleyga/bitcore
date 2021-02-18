@@ -5,8 +5,8 @@ var should = chai.should();
 
 var assert = require('assert');
 var bitcore = require('bitcore-lib-cash');
-var Data = require('./data/messages');
-var P2P = require('../');
+var Data = require('./data/messages.json');
+var P2P = require('../index');
 var BloomFilter = P2P.BloomFilter;
 
 function getPayloadBuffer(messageBuffer) {

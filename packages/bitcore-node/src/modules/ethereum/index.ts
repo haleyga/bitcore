@@ -1,4 +1,4 @@
-import { BaseModule } from '..';
+import { BaseModule } from '../index';
 import { ETHStateProvider } from './api/csp';
 import { EthRoutes } from './api/eth-routes';
 import { EthVerificationPeer } from './p2p/EthVerificationPeer';

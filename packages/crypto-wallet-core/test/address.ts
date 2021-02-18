@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Deriver } from '../src';
+import { Deriver } from 'index';
 
 describe('Address Derivation', () => {
   it('should be able to generate a valid ETH address', () => {

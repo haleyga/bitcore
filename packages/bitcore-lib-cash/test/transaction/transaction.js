@@ -7,7 +7,7 @@ var expect = require('chai').expect;
 var _ = require('lodash');
 var sinon = require('sinon');
 
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var BN = bitcore.crypto.BN;
 var Transaction = bitcore.Transaction;
 var Signature = bitcore.Signature;
@@ -20,7 +20,7 @@ var Networks = bitcore.Networks;
 var Opcode = bitcore.Opcode;
 var errors = bitcore.errors;
 
-var transactionVector = require('../data/tx_creation');
+var transactionVector = require('../data/tx_creation.json');
 
 describe('Transaction', function() {
 
@@ -404,7 +404,7 @@ describe('Transaction', function() {
         .sign(privateKey);
       transaction._estimateSize().should.be.within(1000, 1999);
       transaction.outputs.length.should.equal(2);
-      transaction.outputs[1].satoshis.should.be.within(48001, 49000); 
+      transaction.outputs[1].satoshis.should.be.within(48001, 49000);
     });
     it('fee per byte (high fee) can be set up manually', function () {
       var inputs = _.map(_.range(10), function (i) {
@@ -420,7 +420,7 @@ describe('Transaction', function() {
         .sign(privateKey);
       transaction._estimateSize().should.be.within(1000, 1999);
       transaction.outputs.length.should.equal(2);
-      transaction.outputs[1].satoshis.should.be.within(46002, 48000); 
+      transaction.outputs[1].satoshis.should.be.within(46002, 48000);
     });
     it('fee per byte can be set up manually', function () {
       var inputs = _.map(_.range(10), function (i) {
@@ -436,7 +436,7 @@ describe('Transaction', function() {
         .sign(privateKey);
       transaction._estimateSize().should.be.within(1000, 1999);
       transaction.outputs.length.should.equal(2);
-      transaction.outputs[1].satoshis.should.be.within(24013, 37000); 
+      transaction.outputs[1].satoshis.should.be.within(24013, 37000);
     });
     it('fee per byte not enough for change', function () {
       var inputs = _.map(_.range(10), function (i) {

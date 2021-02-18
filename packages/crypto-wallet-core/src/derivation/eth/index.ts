@@ -1,4 +1,4 @@
-import { IDeriver } from '..';
+import { IDeriver } from '../index';
 
 import utils from 'web3-utils';
 

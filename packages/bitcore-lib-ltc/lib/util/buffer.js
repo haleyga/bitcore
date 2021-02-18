@@ -1,6 +1,6 @@
 'use strict';
 
-var buffer = require('buffer');
+var buffer = require('bitcoin/bitcore/packages/bitcore-lib-ltc/lib/util/buffer');
 var assert = require('assert');
 
 var js = require('./js');

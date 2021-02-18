@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { inject, TestBed } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
-import { ApiProvider } from '../api/api';
+import { ApiProvider } from './api';
 import { DefaultProvider } from '../default/default';
 
 describe('ApiProvider', () => {

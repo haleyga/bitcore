@@ -1,4 +1,4 @@
-import { IValidation } from '..';
+import { IValidation } from '../index';
 const utils = require('web3-utils');
 
 export class EthValidation implements IValidation {

@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { RippleAPI } from 'ripple-lib';
-import { BaseModule } from '../..';
+import { BaseModule } from '../../index';
 import logger from '../../../logger';
 import { RippleStateProvider } from './csp';
 

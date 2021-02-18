@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { ChainService } from '../chain/index';
+import { ChainService } from '../chain';
 import logger from '../logger';
 import { Address } from './address';
 import { AddressManager } from './addressmanager';

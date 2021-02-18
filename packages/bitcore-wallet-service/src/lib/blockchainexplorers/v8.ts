@@ -2,7 +2,7 @@ import * as async from 'async';
 import _ from 'lodash';
 import * as request from 'request-promise-native';
 import io = require('socket.io-client');
-import { ChainService } from '../chain/index';
+import { ChainService } from '../chain';
 import logger from '../logger';
 import { Client } from './v8/client';
 

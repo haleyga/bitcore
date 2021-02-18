@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('chai').should();
-var P2P = require('../../');
+var P2P = require('../../index');
 var Message = P2P.Messages.Message;
 var Networks = require('bitcore-lib').Networks;
 

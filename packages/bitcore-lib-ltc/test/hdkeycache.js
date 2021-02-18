@@ -2,7 +2,7 @@
 
 var _ = require('lodash');
 var expect = require('chai').expect;
-var bitcore = require('..');
+var bitcore = require('../index');
 var HDPrivateKey = bitcore.HDPrivateKey;
 
 var xprivkey = 'Ltpv71G8qDifUiNetP6nmxPA5STrUVmv2J9YSmXajv8VsYBUyuPhvN9xCaQrfX2wo5xxJNtEazYCFRUu5FmokYMM79pcqz8pcdo4rNXAFPgyB4k';

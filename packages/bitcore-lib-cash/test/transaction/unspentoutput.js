@@ -4,7 +4,7 @@ var _ = require('lodash');
 var chai = require('chai');
 var expect = chai.expect;
 
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var UnspentOutput = bitcore.Transaction.UnspentOutput;
 
 describe('UnspentOutput', function() {

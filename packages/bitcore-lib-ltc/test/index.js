@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('chai').should();
-var litecore = require('../');
+var litecore = require('../index');
 
 describe('#versionGuard', function() {
   it('global._litecore should be defined', function() {

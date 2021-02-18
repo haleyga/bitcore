@@ -1,7 +1,7 @@
 'use strict';
 
 var benchmark = require('benchmark');
-var litecore = require('..');
+var litecore = require('../index');
 var bitcoinjs = require('bitcoinjs-lib');
 var bcoin = require('bcoin');
 var async = require('async');

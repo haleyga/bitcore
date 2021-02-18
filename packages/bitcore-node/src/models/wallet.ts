@@ -1,5 +1,5 @@
 import { ObjectID } from 'mongodb';
-import { WalletAddressStorage } from '../models/walletAddress';
+import { WalletAddressStorage } from './walletAddress';
 import { StorageService } from '../services/storage';
 import { TransformOptions } from '../types/TransformOptions';
 import { BaseModel } from './base';

@@ -11,7 +11,7 @@ var _ = bitcore.deps._;
 var Random = bitcore.crypto.Random;
 var BN = bitcore.crypto.BN;
 var BufferUtil = bitcore.util.buffer;
-var p2p = require('../');
+var p2p = require('../index');
 var Peer = p2p.Peer;
 var Pool = p2p.Pool;
 var Networks = bitcore.Networks;
@@ -20,7 +20,7 @@ var Inventory = p2p.Inventory;
 var Block = bitcore.Block;
 var Transaction = bitcore.Transaction;
 
-// config 
+// config
 var network = process.env.NETWORK === 'testnet' ? Networks.testnet : Networks.livenet;
 var messages = new Messages({
   network: network

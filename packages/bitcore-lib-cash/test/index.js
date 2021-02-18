@@ -1,7 +1,7 @@
 "use strict";
 
 var should = require('chai').should();
-var bitcore = require('../');
+var bitcore = require('../index');
 
 describe('#versionGuard', function() {
   it('global._bitcore should be defined', function() {

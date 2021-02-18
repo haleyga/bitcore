@@ -4,7 +4,7 @@ services:
 
   test_runner:
     build:
-      context: .
+      context: ""
       dockerfile: Dockerfile
     ports:
       - 8100:8100
@@ -12,55 +12,64 @@ services:
     environment:
       - DB_HOST=db
       - DB_NAME=bitcore-test
-      - BITCORE_CONFIG_PATH=/bitcore/bitcore-test.config.json
+      - BITCORE_CONFIG_PATH=/bitcore/bitcore.config.json
+    command: npm run node
     depends_on:
       - db
       - bitcoin
-      - parity
-      - rippled
+#      - parity
+#      - rippled
 
   db:
     image: mongo
 
   bitcoin:
-    image: ruimarinho/bitcoin-core:0.16
+    image: ruimarinho/bitcoin-core:0.18
+    ports:
+      - "18443:18443"
+      - "18444:18444"
+      #      - "8332:8332"
+      #      - "8333:8333"
     command:
       -printtoconsole
       -regtest=1
-      -txindex=0
-      -listen=1
       -server=1
-      -irc=0
-      -dnsseed=0
-      -upnp=0
-      -port=8332
-      -rpcport=8333
-      -rpcallowip=172.0.0.0/8
+      -txindex=1
+      -rpcallowip=172.0.0.0/24
       -rpcbind=0.0.0.0
-      -rpcuser=bitcorenodetest
-      -rpcpassword=local321
+      -rpcuser=realiotest
+      -rpcpassword=s1gmQdsNifs6K55eTZSLmSKw2qxs4CV0MV7nS2A5Q90=
 
-  parity:
-    image: parity/parity:v2.4.6
-    ports:
-      - "8545:8545"
-      - "8546:8546"
-    volumes:
-      - ./.docker/parity-password:/data/pw
-    command:
-      --config=dev
-      --jsonrpc-interface=0.0.0.0
-      --ws-interface=0.0.0.0
-      --ws-port=8546
-      --jsonrpc-apis=all
-      --ws-apis=all
-      --unlock 00a329c0648769a73afac7f9381e08fb43dbea72
-      --password /data/pw
+#  parity:
+#    image: parity/parity:v2.4.6
+#    ports:
+#      - "8545:8545"
+#      - "8546:8546"
+#    volumes:
+#      - ./.docker/parity-password:/data/pw
+#    command:
+#      --config=dev
+#      --jsonrpc-interface=0.0.0.0
+#      --ws-interface=0.0.0.0
+#      --ws-port=8546
+#      --jsonrpc-apis=all
+#      --ws-apis=all
+#      --unlock 00a329c0648769a73afac7f9381e08fb43dbea72
+#      --password /data/pw
 
-  rippled:
+#  rippled:
+#    build:
+#      context: ""
+#      dockerfile: .docker/rippled.Dockerfile
+
+  insight:
     build:
-      context: .
-      dockerfile: ./.docker/rippled.Dockerfile
+      context: ./packages/insight
+      dockerfile: ./packages/insight/Dockerfile
+    links:
+      - bitcore-node
+    environment:
+      - API_URL=bitcore-node
 
 networks:
   default:

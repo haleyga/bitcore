@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Transactions } from '../src';
+import { Transactions } from 'index';
 
 describe('Transaction Creation', () => {
   it('should create a BTC tx', () => {

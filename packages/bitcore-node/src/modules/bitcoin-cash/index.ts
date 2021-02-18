@@ -1,4 +1,4 @@
-import { BaseModule } from '..';
+import { BaseModule } from '../index';
 import { BCHStateProvider } from '../../providers/chain-state/bch/bch';
 import { BitcoinP2PWorker } from '../bitcoin/p2p';
 import { VerificationPeer } from '../bitcoin/VerificationPeer';

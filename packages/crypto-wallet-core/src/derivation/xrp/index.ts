@@ -1,5 +1,5 @@
 import rippleKeypairs from 'ripple-keypairs';
-import { IDeriver } from '..';
+import { IDeriver } from '../index';
 
 import BitcoreLib from 'bitcore-lib';
 

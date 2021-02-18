@@ -23,7 +23,7 @@ bower install bitcore-mnemonic --save
 For creating a new random mnemonic code you just create a new instance.
 
 ```javascript
-var Mnemonic = require('bitcore-mnemonic');
+var Mnemonic = require('bitcoin/bitcore/packages/bitcore-mnemonic/bitcore-mnemonic');
 var code = new Mnemonic();
 
 code.toString(); // 'select scout crash enforce riot rival spring whale hollow radar rule sentence'

@@ -7,7 +7,7 @@ var expect = require('chai').expect;
 var _ = require('lodash');
 var sinon = require('sinon');
 
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var BN = bitcore.crypto.BN;
 var Transaction = bitcore.Transaction;
 var Input = bitcore.Transaction.Input;
@@ -20,7 +20,7 @@ var Networks = bitcore.Networks;
 var Opcode = bitcore.Opcode;
 var errors = bitcore.errors;
 
-var transactionVector = require('../data/tx_creation');
+var transactionVector = require('../data/tx_creation.json');
 
 describe('Transaction', function() {
 

@@ -211,8 +211,9 @@ Inputs for tests should not be generated randomly. Also, the type and structure 
 This helps to make tests more useful as examples, and more independent of where they are placed. This also helps prevent forgetting to include all submodules in the litecore object.
 
 DO:
+
 ```javascript
-var litecore = require('../');
+var litecore = require('./.');
 var PublicKey = litecore.PublicKey;
 ```
 DON'T:

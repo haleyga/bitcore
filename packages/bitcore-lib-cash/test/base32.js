@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect;
 var should = require('chai').should();
-var bitcore = require('..');
+var bitcore = require('../index');
 var base32 = bitcore.util.base32;
 
 describe('base32', function() {

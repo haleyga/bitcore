@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { merge, shareReplay } from 'rxjs/operators';
-import { ApiProvider, ChainNetwork } from '../../providers/api/api';
-import { CurrencyProvider } from '../../providers/currency/currency';
+import { ApiProvider, ChainNetwork } from '../api/api';
+import { CurrencyProvider } from '../currency/currency';
 
 export interface ApiBlock {
   height: number;

@@ -2,13 +2,28 @@ version: '3'
 services:
   database:
     image: mongo:3.4-jessie
-    ports: 
-    - 27017:27017
-    volumes: 
-    - /data/db:/data/db
-    
+    ports:
+      - 27017:27017
+#    volumes:
+#      - mongo-data:/data/db
+    networks:
+      - bitcoin-infra
+
+  bitcoind:
+    image: ruimarinho/bitcoin-core:0.18
+    ports:
+      - "18443:18443"
+      - "18444:18444"
+    command:
+      -printtoconsole
+      -regtest=1
+      -server=1
+#    volumes:
+#      - bitcoin-data:/home/bitcoin/.bitcoin
+    networks:
+      - bitcoin-infra
+
   bitcore-node:
-    build: .
     image: bitcore-node
     links:
       - database
@@ -17,11 +32,27 @@ services:
       - 3000:3000
     environment:
       - DB_HOST=database
+    command: npm run node
     env_file: .env
+    networks:
+      - bitcoin-infra
 
-#insight:
-  #image: insight
-  #links:
-    #- bitcore-node
-  #environment:
-    #- API_URL=bitcore-node
+  insight:
+    image: bitcore-node
+    ports:
+      - 8200:8200
+    links:
+      - bitcore-node
+    environment:
+      - API_PREFIX=bitcore-node:3000/api
+    command: npm run insight
+    env_file: .env
+    networks:
+      - bitcoin-infra
+
+#volumes:
+#  bitcoin-data:
+#  mongo-data:
+
+networks:
+  bitcoin-infra:

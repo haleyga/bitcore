@@ -220,7 +220,7 @@ This helps to make tests more useful as examples, and more independent of where 
 DO:
 
 ```javascript
-var bitcore = require('../');
+var bitcore = require('./.');
 var PublicKey = bitcore.PublicKey;
 ```
 

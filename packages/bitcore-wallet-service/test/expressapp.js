@@ -48,7 +48,7 @@ describe('ExpressApp', function() {
         should.not.exist(err);
         initialize.callCount.should.equal(1);
         done();
-      });           
+      });
     });
 
     describe('Routes', function() {
@@ -96,7 +96,7 @@ describe('ExpressApp', function() {
           request(requestOptions, function(err, res, body) {
             should.not.exist(err);
             should.exist(res.headers['x-service-version']);
-            res.headers['x-service-version'].should.equal('bws-' + require('../package').version);
+            res.headers['x-service-version'].should.equal('bws-' + require('../package.json').version);
             res.statusCode.should.equal(200);
             body.should.equal('{}');
             done();
@@ -136,7 +136,7 @@ describe('ExpressApp', function() {
         });
       });
 
-  
+
       it('latest-copay-version', function(done) {
 
           var htmlString = {
@@ -174,21 +174,21 @@ describe('ExpressApp', function() {
             "created_at": "2019-10-29T14:09:01Z",
             "published_at": "2019-11-01T19:50:37Z",
             "assets": [
-          
+
             ],
             "tarball_url": "https://api.github.com/repos/bitpay/wallet/tarball/v7.1.1",
             "zipball_url": "https://api.github.com/repos/bitpay/wallet/zipball/v7.1.1",
             "body": "### Changelog\r\n\r\nNEW\r\n\r\n* ETH Testnet support\r\n* EUR Gift Cards\r\n* Export Key to another wallet as QR code\r\n\r\nBUG FIXES\r\n\r\n* Open app from ETH link (only Desktop)\r\n* Clear badge of pending notification (iOS)\r\n* UI issues on Settings Page\r\n* Send-max for top up cards\r\n\r\n### Download\r\n\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td>App</td>\r\n<td>for Mac OS</td>\r\n<td>for Windows</td>\r\n<td>for Linux</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<a href=\"https://bitpay.com/wallet\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48089088-68afa480-e1e2-11e8-83a8-361d0440528c.png\" alt=\"BitPay\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://itunes.apple.com/us/app/bitpay/id1440200291?ls=1&mt=12\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092454-7ddd0100-e1eb-11e8-9e13-3fe80bba7f00.png\" alt=\"mac\" width=\"120\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://www.microsoft.com/store/apps/9NBR15SK4ZJV\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092465-82091e80-e1eb-11e8-9e06-36b36cd44021.png\" alt=\"windows\" width=\"120\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://snapcraft.io/bitpay\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092664-09ef2880-e1ec-11e8-94a2-184446cb7183.png\" alt=\"linux\" width=\"120\"></a>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<a href=\"https://copay.io\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48089097-6cdbc200-e1e2-11e8-9e54-363d54ae8fc6.png\" alt=\"Copay\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://itunes.apple.com/us/app/copay/id1440201813\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092454-7ddd0100-e1eb-11e8-9e13-3fe80bba7f00.png\" alt=\"mac\" width=\"120\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://www.microsoft.com/store/apps/9MZGT30HL9DF\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092465-82091e80-e1eb-11e8-9e06-36b36cd44021.png\" alt=\"windows\" width=\"120\"></a>\r\n</td>\r\n<td>\r\n<a href=\"https://snapcraft.io/copay\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/237435/48092664-09ef2880-e1ec-11e8-94a2-184446cb7183.png\" alt=\"linux\" width=\"120\"></a>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>"
           };
-          
-          
+
+
           var server = {
             storage: {
               storeGlobalCache: sinon.stub().callsArgWith(2, null),
               checkAndUseGlobalCache: sinon.stub().callsArgWith(2, null, 'v8.2.2'),
             }
           };
-          
+
           var {ExpressApp: TestExpressApp} = proxyquire('../ts_build/lib/expressapp', {
             './server': {
               WalletService: {
@@ -198,7 +198,7 @@ describe('ExpressApp', function() {
               }
             }
           });
-          
+
           start(TestExpressApp, function() {
             var requestOptions = {
               url: testHost + ':' + testPort + config.basePath + '/latest-version',
@@ -234,7 +234,7 @@ describe('ExpressApp', function() {
             }
           }
         });
-        
+
         start(TestExpressApp, function() {
           var requestOptions = {
             url: testHost + ':' + testPort + config.basePath + '/v1/sendmaxinfo?feePerKb=10000&returnInputs=1',
@@ -430,7 +430,7 @@ describe('ExpressApp', function() {
             });
           });
         });
-        
+
       });
       describe('Clear cache', function(done) {
         it('/v1/clearcache/', function(done) {
@@ -462,7 +462,7 @@ describe('ExpressApp', function() {
               done();
             });
           });
-        });  
+        });
       })
     });
   });

@@ -1,7 +1,7 @@
 import { Transactions, Validation } from 'crypto-wallet-core';
 import _ from 'lodash';
-import { IAddress } from 'src/lib/model/address';
-import { IChain, INotificationData } from '..';
+import { IAddress } from 'lib/model/address';
+import { IChain, INotificationData } from '../index';
 import logger from '../../logger';
 
 const Common = require('../../common');

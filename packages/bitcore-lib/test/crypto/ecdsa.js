@@ -8,7 +8,7 @@ var Signature = require('../../lib/crypto/signature');
 var BN = require('../../lib/crypto/bn');
 var point = require('../../lib/crypto/point');
 var should = require('chai').should();
-var vectors = require('../data/ecdsa');
+var vectors = require('../data/ecdsa.json');
 
 describe('ECDSA', function() {
 

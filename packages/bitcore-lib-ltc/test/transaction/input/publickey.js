@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('chai').should();
-var bitcore = require('../../..');
+var bitcore = require('../../../index');
 var Transaction = bitcore.Transaction;
 var PrivateKey = bitcore.PrivateKey;
 

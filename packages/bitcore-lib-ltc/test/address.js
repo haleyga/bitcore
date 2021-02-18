@@ -6,7 +6,7 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 
-var bitcore = require('..');
+var bitcore = require('../index');
 var PublicKey = bitcore.PublicKey;
 var Address = bitcore.Address;
 var Script = bitcore.Script;

@@ -3,7 +3,7 @@
 var should = require('chai').should();
 var expect = require('chai').expect;
 
-var bitcore = require('..');
+var bitcore = require('../index');
 var Point = bitcore.crypto.Point;
 var BN = bitcore.crypto.BN;
 var PublicKey = bitcore.PublicKey;
@@ -382,13 +382,13 @@ describe('PublicKey', function() {
       ['Kwr371tjA9u2rFSMZjTNun2PXXP3WPZu2afRHTcta6KxEUdm1vEw', '1NoJrossxPBKfCHuJXT4HadJrXRE9Fxiqs'],
       ['L3Hq7a8FEQwJkW1M2GNKDW28546Vp5miewcCzSqUD9kCAXrJdS3g', '1CRj2HyM1CXWzHAXLQtiGLyggNT9WQqsDs']
     ];
-    
+
     data.forEach(function(d){
       var publicKey = PrivateKey.fromWIF(d[0]).toPublicKey();
       var address = Address.fromString(d[1]);
       address.hashBuffer.should.deep.equal(publicKey._getID());
     });
-    
+
   });
 
   describe('#toString', function() {

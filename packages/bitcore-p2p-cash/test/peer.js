@@ -12,7 +12,7 @@ var fs = require('fs');
 
 var bitcore = require('bitcore-lib-cash');
 var _ = bitcore.deps._;
-var P2P = require('../');
+var P2P = require('../index');
 var Peer = P2P.Peer;
 var EventEmitter = require('events').EventEmitter;
 var Messages = P2P.Messages;

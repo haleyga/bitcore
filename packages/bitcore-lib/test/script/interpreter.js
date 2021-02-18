@@ -2,7 +2,7 @@
 
 var should = require('chai').should();
 var sinon = require('sinon');
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var Interpreter = bitcore.Script.Interpreter;
 var Transaction = bitcore.Transaction;
 var PrivateKey = bitcore.PrivateKey;
@@ -12,9 +12,9 @@ var BufferWriter = bitcore.encoding.BufferWriter;
 var Opcode = bitcore.Opcode;
 var _ = require('lodash');
 
-var script_tests = require('../data/bitcoind/script_tests');
-var tx_valid = require('../data/bitcoind/tx_valid');
-var tx_invalid = require('../data/bitcoind/tx_invalid');
+var script_tests = require('../data/bitcoind/script_tests.json');
+var tx_valid = require('../data/bitcoind/tx_valid.json');
+var tx_invalid = require('../data/bitcoind/tx_invalid.json');
 
 //the script string format used in bitcoind data tests
 Script.fromBitcoindString = function(str) {
@@ -379,7 +379,7 @@ describe('Interpreter', function() {
         if (_.isArray(vector[0])) {
           var extra = vector.shift();
           amount = extra.pop()  * 1e8;
-          witness = extra.map(function(x) { 
+          witness = extra.map(function(x) {
             return Buffer.from(x,'hex');
           });
         } else {

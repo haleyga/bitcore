@@ -3,7 +3,7 @@
 var should = require('chai').should();
 var expect = require('chai').expect;
 
-var bitcore = require('..');
+var bitcore = require('../index');
 var Point = bitcore.crypto.Point;
 var BN = bitcore.crypto.BN;
 var PublicKey = bitcore.PublicKey;

@@ -63,7 +63,7 @@ describe('Wallet service', function() {
     config.suspendedChains = [];
 
     // restore defaults, cp values
-    _.each(_.keys(VanillaDefaults), (x) => { 
+    _.each(_.keys(VanillaDefaults), (x) => {
       Defaults[x] = VanillaDefaults[x];
     });
 
@@ -75,11 +75,11 @@ describe('Wallet service', function() {
     helpers.after(done);
   });
 
-    
+
 
   describe('#getServiceVersion', function() {
     it('should get version from package', function() {
-      WalletService.getServiceVersion().should.equal('bws-' + require('../../package').version);
+      WalletService.getServiceVersion().should.equal('bws-' + require('../../package.json').version);
     });
   });
 
@@ -321,7 +321,7 @@ describe('Wallet service', function() {
             should.exist(ad);
             next();
           });
-        }, 
+        },
         server.removeAdvert({adId: '123'}, function(err, nextArg) {
            should.not.exist(err);
         })
@@ -3799,7 +3799,7 @@ describe('Wallet service', function() {
       addr: '0x37d7B3bBD88EFdE6a93cF74D2F5b0385D3E3B08A',
       lockedFunds: 0,
       flags: { noChange: true, noUtxoTests: true, },
-    }, 
+    },
     {
       coin: 'xrp',
       key: 'id44btc',
@@ -3850,7 +3850,7 @@ describe('Wallet service', function() {
           let old = blockchainExplorer.getTransactionCount;
           blockchainExplorer.getTransactionCount = sinon.stub().callsArgWith(1, null, '5');
           helpers.stubUtxos(server, wallet, [1, 2], { coin }, function() {
-            let amount = 8000; 
+            let amount = 8000;
             var txOpts = {
               outputs: [{
                 toAddress: addressStr,
@@ -5179,7 +5179,7 @@ describe('Wallet service', function() {
         });
 
         it('should exclude unconfirmed utxos if specified', function(done) {
-          
+
           helpers.stubUtxos(server, wallet, [1.3, 'u2', 'u0.1', 1.2], function(utxos) {
             var txOpts = {
               outputs: [{
@@ -6976,7 +6976,7 @@ describe('Wallet service', function() {
         utxos: [1, 2],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -6987,7 +6987,7 @@ describe('Wallet service', function() {
         utxos: ['100000 sat', '20000 sat', 1],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -6998,7 +6998,7 @@ describe('Wallet service', function() {
         utxos: [1.2],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
        vSize: 144,
       },
@@ -7009,7 +7009,7 @@ describe('Wallet service', function() {
         utxos: [0.4, 0.4, 0.4],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
       // CASE 8
@@ -7020,7 +7020,7 @@ describe('Wallet service', function() {
         utxos: [0.2, 0.2, 0.1, 0.1, 0.3, 0.15],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
       {
@@ -7080,7 +7080,7 @@ describe('Wallet service', function() {
         utxos: [1, 2],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -7092,7 +7092,7 @@ describe('Wallet service', function() {
         utxos: ['100000 sat', '20000 sat', 1],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -7104,11 +7104,11 @@ describe('Wallet service', function() {
         utxos: [1.1],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
        vSize: 144,
       },
- 
+
      {
         n: 2,
        vSize: 321,
@@ -7118,7 +7118,7 @@ describe('Wallet service', function() {
         utxos: [0.4, 0.4, 0.4],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
     {
@@ -7129,7 +7129,7 @@ describe('Wallet service', function() {
         utxos: [0.2, 0.2, 0.1, 0.1, 0.3, 0.15],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
       {
@@ -7194,7 +7194,7 @@ describe('Wallet service', function() {
         utxos: [1, 2],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -7207,7 +7207,7 @@ describe('Wallet service', function() {
         utxos: ['100000 sat', '20000 sat', 1],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 10000, 
+          amount: 10000,
         }],
        vSize: 141, // from https://btc.com/tools/tx/decode
       },
@@ -7220,11 +7220,11 @@ describe('Wallet service', function() {
         utxos: [1.1],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
        vSize: 144,
       },
- 
+
      {
         m: 2,
         n: 3,
@@ -7235,7 +7235,7 @@ describe('Wallet service', function() {
         utxos: [0.4, 0.4, 0.4],
         outputs:  [{
           toAddress: '18PzpUFkFZE8zKWUPvfykkTxmB9oMR8qP7',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
     {
@@ -7247,7 +7247,7 @@ describe('Wallet service', function() {
         utxos: [0.2, 0.2, 0.1, 0.1, 0.3, 0.15],
         outputs:  [{
           toAddress: 'bc1q9ytgh0jywlxv0zr8w3ytd6z5rpgct6tuvmh4pl',
-          amount: 1e8, 
+          amount: 1e8,
         }],
       },
     ];
@@ -7309,7 +7309,7 @@ describe('Wallet service', function() {
 
           helpers.stubUtxos(server, wallet, x.utxos, function() {
             server.getSendMaxInfo({
-              feePerKb: x.requiredFeeRate, 
+              feePerKb: x.requiredFeeRate,
               returnInputs: true,
             }, function(err, info) {
               should.not.exist(err, err);
@@ -10100,7 +10100,7 @@ describe('Wallet service', function() {
     let server, wallet, fakeRequest, req;
     beforeEach((done) => {
       transport.level= 'info';
- 
+
       config.simplex = {
         sandbox: {
           apiKey: 'xxxx',
@@ -10573,7 +10573,7 @@ describe('Wallet service', function() {
         wallet = w;
         server.getCoinsForTx('abab', function(err, coins) {
           should.not.exist(err);
-          coins.should.deep.equal({ 
+          coins.should.deep.equal({
             inputs: [],
             outputs: [],
           });
@@ -10677,7 +10677,7 @@ describe('Wallet service', function() {
 
     it('should call getPayId with a url obtained from the template field if it exists', () => {
       const fakeRequest2 = {
-        get: (_url, _opts, _cb) => { return _cb(null, { 
+        get: (_url, _opts, _cb) => { return _cb(null, {
           body: {
             subject: "payid:matias$ematiu.sandbox.payid.org",
             links: [{
@@ -10685,7 +10685,7 @@ describe('Wallet service', function() {
                 href: "https://xpring.io/portal/wallet/xrp/testnet/payto",
                 template: "https://ematiu.sandbox.payid.org/payid/{acctpart}"
               }]
-          } 
+          }
         })}
       };
 
@@ -10703,14 +10703,14 @@ describe('Wallet service', function() {
 
     it('should call getPayId with a default url if the template field does not exist', () => {
       const fakeRequest2 = {
-        get: (_url, _opts, _cb) => { return _cb(null, { 
+        get: (_url, _opts, _cb) => { return _cb(null, {
           body: {
             subject: "payid:matias$ematiu.sandbox.payid.org",
             links: [{
                 rel: "https://payid.org/ns/payid-easy-checkout-uri/1.0",
                 href: "https://xpring.io/portal/wallet/xrp/testnet/payto",
               }]
-          } 
+          }
         })}
       };
       const url = 'https://ematiu.sandbox.payid.org/matias';

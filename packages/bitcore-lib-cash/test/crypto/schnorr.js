@@ -8,7 +8,7 @@ var Signature = require('../../lib/crypto/signature');
 var BN = require('../../lib/crypto/bn');
 var point = require('../../lib/crypto/point');
 var should = require('chai').should();
-var vectors = require('../data/ecdsa');
+var vectors = require('../data/ecdsa.json');
 
 
 // Test Vectors used from
@@ -39,19 +39,19 @@ describe("#Schnorr", function() {
     it('Sign/Verify Test 2', function() {
         let hashbuf = (new BN(0)).toBuffer({ size: 32 });
         let privbn = new BN(1);
-        
+
         let privkey = new Privkey(privbn);
 
         let schnorrSig = Schnorr({
             hashbuf: hashbuf,
             endian: "big",
             privkey: privkey,
-            hashtype: 65 
+            hashtype: 65
         });
         schnorrSig.sign();
 
         let verified = schnorrSig.verify().verified;
-        verified.should.equal(true); 
+        verified.should.equal(true);
     });
 
     it("Sign/Verify 3",  function() {
@@ -62,7 +62,7 @@ describe("#Schnorr", function() {
         schnorr.sign();
         schnorr.verify().verified.should.equal(true);
     });
- 
+
     it("Sign/Verify Test 4",  function() {
         var schnorr = new Schnorr();
         schnorr.hashbuf = Buffer.from('5E2D58D8B3BCDF1ABADEC7829054F90DDA9805AAB56C77333024B9D0A508B75C', 'hex');
@@ -104,7 +104,7 @@ describe("#Schnorr", function() {
             return new Pubkey("02EEFDEA4CDB677750A420FEE807EACF21EB9898AE79B9768766E4FAA04A2D4A34").should.throw("Invalid X");
         });
     });
-    
+
 
     it("Verify Test 8, has_square_y(R) is false",  function() {
         schnorr.hashbuf = Buffer.from('243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89', 'hex');
@@ -177,10 +177,10 @@ describe("#Schnorr", function() {
             hashbuf: hashbuf,
             endian: 'little',
             privkey: privkey,
-            hashtype: 65 
+            hashtype: 65
         });
         schnorrSig.sign();
         let verified = schnorrSig.verify().verified;
-        verified.should.equal(true); 
+        verified.should.equal(true);
     });
 });

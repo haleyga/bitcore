@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { TransactionDetailsEthComponentModule } from '../../components/transaction-details-eth/transaction-details-eth.module';
+import { TransactionDetailsEthComponentModule } from '../transaction-details-eth/transaction-details-eth.module';
 import { CoinComponentModule } from '../coin/coin.module';
 import { LoaderComponentModule } from '../loader/loader.module';
 import { CoinListComponent } from './coin-list';

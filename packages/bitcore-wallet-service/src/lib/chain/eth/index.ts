@@ -1,8 +1,8 @@
 import { Transactions, Validation } from 'crypto-wallet-core';
 import { Web3 } from 'crypto-wallet-core';
 import _ from 'lodash';
-import { IAddress } from 'src/lib/model/address';
-import { IChain, INotificationData } from '..';
+import { IAddress } from 'lib/model/address';
+import { IChain, INotificationData } from '../index';
 import logger from '../../logger';
 import { ERC20Abi } from './abi-erc20';
 import { InvoiceAbi } from './abi-invoice';

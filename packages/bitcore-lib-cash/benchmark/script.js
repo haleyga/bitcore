@@ -1,7 +1,7 @@
 'use strict';
 
 var benchmark = require('benchmark');
-var bitcore = require('..');
+var bitcore = require('../index');
 var async = require('async');
 var blockData = require('./block-357238.json');
 

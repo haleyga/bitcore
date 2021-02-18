@@ -5,7 +5,7 @@ import logger from './logger';
 
 import { BlockChainExplorer } from './blockchainexplorer';
 import { V8 } from './blockchainexplorers/v8';
-import { ChainService } from './chain/index';
+import { ChainService } from './chain';
 import { ClientError } from './errors/clienterror';
 import { FiatRateService } from './fiatrateservice';
 import { Lock } from './lock';

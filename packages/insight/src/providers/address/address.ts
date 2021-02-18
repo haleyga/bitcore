@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiProvider, ChainNetwork } from '../../providers/api/api';
-import { CurrencyProvider } from '../../providers/currency/currency';
+import { ApiProvider, ChainNetwork } from '../api/api';
+import { CurrencyProvider } from '../currency/currency';
 import { BlocksProvider } from '../blocks/blocks';
 import { ApiCoin, ApiEthCoin, TxsProvider } from '../transactions/transactions';
 

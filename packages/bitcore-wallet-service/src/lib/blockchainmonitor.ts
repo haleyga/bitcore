@@ -3,7 +3,7 @@ import _ from 'lodash';
 import 'source-map-support/register';
 
 import { BlockChainExplorer } from './blockchainexplorer';
-import { ChainService } from './chain/index';
+import { ChainService } from './chain';
 import { Lock } from './lock';
 import logger from './logger';
 import { MessageBroker } from './messagebroker';

@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { Validation } from '../src';
+import { Validation } from 'index';
 
 describe('Address Validation', () => {
   // BTC

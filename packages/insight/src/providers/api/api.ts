@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DefaultProvider } from '../../providers/default/default';
+import { DefaultProvider } from '../default/default';
 
 import * as _ from 'lodash';
 
@@ -21,7 +21,7 @@ const EnvApiHosts: { [env: string]: { [chain: string]: string } } = {
     default: 'https://api.bitcore.io/api',
     ETH: 'https://api-eth.bitcore.io/api'
   },
-  dev: { default: '/api' }
+  dev: { default: '/api', BTC: process.env.API_PREFIX }
 };
 
 const CurrentApiHosts = EnvApiHosts[CurrentEnv];

@@ -1,0 +1,30 @@
+{
+  "bitcoreNode": {
+    "modules": ["./bitcoin"],
+    "services": {
+      "api": {
+        "wallets": {
+          "allowCreationBeforeCompleteSync": true
+        }
+      }
+    },
+    "chains": {
+      "BTC": {
+        "regtest": {
+          "chainSource": "p2p",
+          "trustedPeers": [
+            {
+              "host": "bitcoind",
+              "port": 18444
+            }
+          ],
+          "rpc": {
+            "host": "bitcoind",
+            "port": 18443,
+            "username": "bitcoin"
+          }
+        }
+      }
+    }
+  }
+}

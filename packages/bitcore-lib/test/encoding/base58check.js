@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('chai').should();
-var bitcore = require('../..');
+var bitcore = require('../../index');
 var Base58Check = bitcore.encoding.Base58Check;
 var Base58 = bitcore.encoding.Base58;
 
@@ -32,7 +32,7 @@ describe('Base58Check', function() {
   });
 
   describe('#set', function() {
-    
+
     it('should set a buf', function() {
       should.exist(Base58Check().set({buf: buf}).buf);
     });
@@ -83,7 +83,7 @@ describe('Base58Check', function() {
   });
 
   describe('#fromBuffer', function() {
-    
+
     it('should not fail', function() {
       should.exist(Base58Check().fromBuffer(buf));
     });

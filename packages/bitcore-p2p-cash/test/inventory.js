@@ -5,7 +5,7 @@
 var should = require('chai').should();
 
 var bitcore = require('bitcore-lib-cash');
-var P2P = require('../');
+var P2P = require('../index');
 var Inventory = P2P.Inventory;
 var BufferUtils = bitcore.util.buffer;
 var BufferWriter = bitcore.encoding.BufferWriter;

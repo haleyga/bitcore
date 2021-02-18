@@ -3,7 +3,7 @@
 var chai = require('chai');
 var should = chai.should();
 
-var bitcore = require('..');
+var bitcore = require('../index');
 var fs = require('fs');
 
 describe('Documentation', function() {

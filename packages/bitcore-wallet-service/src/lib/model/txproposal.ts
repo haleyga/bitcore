@@ -1,6 +1,6 @@
 import { Transactions } from 'crypto-wallet-core';
 import _ from 'lodash';
-import { ChainService } from '../chain/index';
+import { ChainService } from '../chain';
 import logger from '../logger';
 import { TxProposalLegacy } from './txproposal_legacy';
 import { TxProposalAction } from './txproposalaction';
